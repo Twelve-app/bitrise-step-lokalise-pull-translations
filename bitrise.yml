@@ -40,7 +40,10 @@ workflows:
           file if you would not specify another value.
         run_if: true
         inputs:
-        - example_step_input: Example Step Input's value
+        - project_id: 'XXX'
+        - api_token: 'XXX'
+        - format: 'xml'
+        - unzip_to: $BITRISE_SOURCE_DIR/core/translation/src/main/res
     - script:
         inputs:
         - content: |

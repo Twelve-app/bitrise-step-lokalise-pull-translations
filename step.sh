@@ -1,19 +1,22 @@
 #!/bin/bash
 set -ex
 
-curl -sfL https://raw.githubusercontent.com/lokalise/lokalise-cli-2-go/master/install.sh | sh
+echo "Install Lokalise CLI"
+
+curl -L https://raw.githubusercontent.com/lokalise/lokalise-cli-2-go/master/install.sh | sh
+
+echo "Pull translations"
 
 if [ -z "$langs" ]
 then
-  lokalise2 \
+  ./bin/lokalise2 \
       file download \
       --format $format \
-      --filter-langs ${1:-en} \
       --token $api_token \
       --project-id $project_id \
       --unzip-to $unzip_to
 else
-  lokalise2 \
+  ./bin/lokalise2 \
       file download \
       --format $format \
       --filter-langs $langs \
