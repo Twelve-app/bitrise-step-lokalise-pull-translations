@@ -14,7 +14,8 @@ then
       --format $format \
       --token $api_token \
       --project-id $project_id \
-      --unzip-to $unzip_to
+      --unzip-to $unzip_to \
+      --export-empty-as skip
 else
   ./bin/lokalise2 \
       file download \
@@ -22,5 +23,6 @@ else
       --filter-langs $langs \
       --token $api_token \
       --project-id $project_id \
-      --unzip-to $unzip_to
+      --unzip-to $unzip_to \
+      --export-empty-as skip
 fi
